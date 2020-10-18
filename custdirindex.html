@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app='ControllerAsApp'>
+  <head>
+    <style>
+  .div1{
+    background-color:pink;
+    width: 500px;
+    height: 100px;
+    padding:50px;
+    border: 10px solid black;
+  }
+  .div2{
+    background-color:pink;
+    width: 500px;
+    height: 100px;
+    padding:50px;
+    border: 10px solid black;
+  }
+body {
+  background-image: url('11.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 100px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: pink;
+  color: black;
+}
+  </style>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="custdirapp.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Custom Service</title>
+  </head>
+  <body>
+    <!-- <body style="background-color:pink;"> -->
+    <h1><b><center>MIKKA'S ONLINE BEAUTY STORE</b></center></h1>
+<br><br>
+
+<div class="topnav">
+  <a class="active" href="file:///C:/Users/Admin/Downloads/New%20folder/custdirindex.html">Home</a>
+  <a href="file:///C:/Users/Admin/Downloads/New%20folder/repeatfilterpage.html">Shop</a>
+  <a href="file:///C:/Users/Admin/Downloads/New%20folder/eventindex.html">Suggestions</a>
+  <a href="file:///C:/Users/Admin/Downloads/New%20folder/help.html">Help</a>
+</div>
+<br><br>
+
+    <!-- LIST #1 - unlimited items -->
+    <div id="list" ng-controller='ShoppingListController1 as list'>
+      <center><div class="div1">
+      <h3>Search through typing!</h3>
+      <input type="text" ng-model="list.itemName" placeholder="beauty products">
+      <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+      <button ng-click="list.addItem();">Add products</button>
+      <ol>
+        <list-item ng-repeat="item in list.items"></list-item>
+      </ol>
+      <div class="error" ng-if="list.errorMessage">Error: {{list.errorMessage}}</div>
+</div></center>
+</div><br><br><br>
+
+    <!-- LIST #2 (limited to 3 items) -->
+    <div id="list" ng-controller='ShoppingListController2 as list'>
+      <center><div class="div2">
+      <h3>Shop here #2 (limited to 3 items)</h3>
+      <input type="text" ng-model="list.itemName" placeholder="beauty products">
+      <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+      <button ng-click="list.addItem();">Add products</button>
+      <ol>
+        <list-item ng-repeat="item in list.items"></list-item>
+      </ol>
+      <div class="error" ng-if="list.errorMessage">Error: {{list.errorMessage}}</div>
+</div></center>
+    </div>
+
+  </body>
+</html>

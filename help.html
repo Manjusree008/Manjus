@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+  body {
+    background-image: url('22.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 100px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: pink;
+    color: black;
+  }
+  p{
+    font-size: 40px;
+  }
+</style>
+  <meta charset="UTF-8">
+
+  <script src="angular.min.js"></script>
+  <script src="help.js"></script>
+
+</head>
+<body ng-app="scopeInheritance">
+  <h1><center>MIKA'S BEAUTY STORE</center></h1>
+<br><br>
+  <div class="topnav">
+    <a  href="file:///C:/Users/Admin/Downloads/New%20folder/custdirindex.html">Home</a>
+    <a href="file:///C:/Users/Admin/Downloads/New%20folder/repeatfilterpage.html">Shop</a>
+    <a href="file:///C:/Users/Admin/Downloads/New%20folder/eventindex.html">Suggestions</a>
+    <a class="file:///C:/Users/Admin/Downloads/New%20folder/help.html">Help</a>
+  </div>
+  <br><br>
+
+  <div class="spicy">
+  <div ng-controller="MainController">
+    <p>Welcome {{name1}} to our help page!</p>
+
+    <div ng-controller="ChildController">
+      <p>If you have any issues {{name1}} {{name2}}, click down!</p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+<!--
+Copyright 2020 Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

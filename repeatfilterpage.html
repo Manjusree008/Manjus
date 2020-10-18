@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app = 'repApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="repeatfilterapp.js"></script>
+    <title>shop list</title>
+  </head>
+  <style>
+  .div1{
+    background-color:pink;
+    width: 300px;
+    height: 250px;
+    padding:50px;
+    border: 10px solid black;
+  }
+  .div2{
+    background-color:pink;
+    width: 300px;
+    height: 310px;
+    padding:50px;
+    border: 10px solid black;
+  }
+  body {
+  background-image: url('22.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 100px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: pink;
+  color: black;
+}
+</style>
+    <h1><b><center>MIKA'S ONLINE BEAUTY SHOPPING LIST!!</center></b></h1>
+    <br>
+    <br>
+    <div class="topnav">
+      <a  href="file:file:///C:/Users/Admin/Downloads/New%20folder/custdirindex.html>Home</a>
+      <a class="active" href="file:///C:/Users/Admin/Downloads/New%20folder/repeatfilterpage.html>Shop</a>
+      <a href="file:///C:/Users/Admin/Downloads/New%20folder/eventindex.html">Suggestions</a>
+      <a href="file:///C:/Users/Admin/Downloads/New%20folder/help.html">Help</a>
+    </div><br><br>
+    <div ng-controller = 'repController'>
+      <center>
+      <div class="div1">
+      <h2>Shopping List</h2>
+      <input type=text ng-model="search1">
+      <ul>
+        <li ng-repeat="item in shopList | filter : search1">{{item}}</li>
+      </ul></div>
+      <br>
+      <div class="div2">
+      <h2>Quantity List</h2>
+      <input type=text ng-model="search2" >
+      <br><br>
+      <table border=1>
+        <tr><th>Items</th><th>Price</th><th>Quantity</th></tr>
+        <tr ng-repeat="item in shopListDetails | filter : search2">{{quan}}
+          <td>{{item.name | uppercase }}</td>
+          <td>{{item.price | currency : "$"}}</td>
+          <td>{{item.quan}}</td>
+        </tr>
+      </table></div>
+    </center>
+    </div>
+  </body>
+</html>

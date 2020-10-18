@@ -1,0 +1,87 @@
+  
+<!DOCTYPE html>
+<html ng-app = 'eventApp'>
+  <head>
+    <style>
+    .div1{
+      background-color:pink;
+      width: 500px;
+      height: 250px;
+      padding:50px;
+      border: 10px solid black;
+    }
+    body {
+      background-image: url('22.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 100px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: pink;
+      color: black;
+    }
+    </style>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="eventapp.js"></script>
+  </head>
+  <body>
+    <div ng-controller = 'eventController'>
+      <h1><center>MIKA'S BEAUTY STORE SUGGESTIONS BOX!!</center></h1><BR><BR>
+      <div class="topnav">
+        <a  href="file:///Users/nivedtha/Desktop/wt/custdirindex.html">Home</a>
+        <a href="file:///Users/nivedtha/Desktop/wt/repeatfilterpage.html">Shop</a>
+        <a class="active" href="file:///Users/nivedtha/Desktop/wt/eventindex.html">Suggestions</a>
+        <a href="file:///Users/nivedtha/Desktop/wt/help.html">Help</a>
+      </div><br>
+      <br><br><br><br>
+      <!-- <h2>Mouse Event Demo</h2>
+      <p ng-mousemove="mm=mm+1"
+      ng-mouseover="mo=mo+1"
+      ng-mouseleave="ml=ml+1"
+      ng-click="c=c+1"
+      ng-mousedown="md=md+1"
+      ng-mouseup="mu=mu+1">
+        This is sample paragraph. Move the cursor over this.
+      </p>
+      <h4>Mouse Move: {{mm}}</h4>
+      <h4>Mouse Over: {{mo}}</h4>
+      <h4>Mouse Leave: {{ml}}</h4>
+      <h4>Mouse Click: {{c}}</h4>
+      <h4>Mouse Up: {{mu}}</h4>
+      <h4>Mouse Down: {{md}}</h4> -->
+      <center>
+      <div class="div1">
+      <h2>Suggestion Box!!</h2>
+        <!--<input type="text" placeholder="Type your suggestions!">
+    <div ng-show="name =='Abhijith'"> Welcome Admin </div>
+      <h4>Length of String Entered: {{kp1}}</h4>-->
+      <center><textarea
+      ng-keypress="kp2=kp2-1" cols="50">
+    </textarea></center>
+     <br>({{kp2}} words only allowed)
+     <br><br><br><br>
+<button type="button" onclick="alert('Thanks for the suggestions!')">Submit</button>
+    </div></center>
+    </div>
+  </body>
+</html>
